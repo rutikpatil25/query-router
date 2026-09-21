@@ -5,3 +5,7 @@ venv/
 # Ignore Python compiled bytecode globally
 **/__pycache__/
 *.pyc
+
+# Igonre the brain also that can be generated from the train.py
+**/trained_model.pkl
+**/vectorizer.pkl
