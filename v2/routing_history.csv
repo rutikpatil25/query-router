@@ -1,0 +1,9 @@
+timestamp,query,route,method,confidence
+2026-09-21T13:51:09.173692+00:00,Find a coffee shop near me,local,ml,0.6040
+2026-09-21T13:51:09.174690+00:00,What is quantum computing?,online,fallback,0.5158
+2026-09-21T14:22:58.458581+00:00,Find a coffee shop near me,local,ml,0.6040
+2026-09-21T14:28:37.347033+00:00,Find a coffee shop near me,local,ml,0.6040
+2026-09-21T14:28:37.347033+00:00,Search online for current prices,online,keyword,1.0000
+2026-09-21T14:34:41.479759+00:00,what is temperature now,online,fallback,0.5349
+2026-09-21T15:00:20.167540+00:00,string,online,fallback,0.5051
+2026-09-21T16:29:04.765771+00:00,hello,online,fallback,0.5051
