@@ -28,15 +28,19 @@ def train() -> None:
         print("Place the configured dataset file in the v4 folder and try again.")
         raise SystemExit(1)
 
+    # 1.Extract (Gathering the Raw Data)
+    # loading = dataset
     data = pd.read_csv(DATASET_PATH)
     required_columns = {"query", "label"}
     if not required_columns.issubset(data.columns):
         raise ValueError("dataset.csv must contain 'query' and 'label' columns")
     if data.empty:
         raise ValueError("dataset.csv must contain at least one training row")
-
+    
     queries = data["query"].astype(str)
     labels = data["label"].astype(str)
+
+    # 2.Transform (Preparing the Data for the Model)
     train_queries, validation_queries, train_labels, validation_labels = (
         train_test_split(
             queries,
@@ -47,13 +51,15 @@ def train() -> None:
         )
     )
 
+    # preparing the text vectorizer
     vectorizer = TfidfVectorizer(
-        lowercase=True, ngram_range=(1, 2), sublinear_tf=True
+        lowercase=True, ngram_range=(1, 2), sublinear_tf=True # 1 and 2 for unigrams and biagrams (single words and pair of words)
     )
     train_features = vectorizer.fit_transform(train_queries)
     validation_features = vectorizer.transform(validation_queries)
-    model = LogisticRegression(C=0.5, max_iter=1000, random_state=42)
+    model = LogisticRegression(C=0.01, max_iter=1000, random_state=42)
     model.fit(train_features, train_labels)
+
 
     predictions = model.predict(validation_features)
     label_order = ["local", "online"]
@@ -83,6 +89,7 @@ def train() -> None:
     print(f"Labels: {label_order}")
     print(confusion_matrix(validation_labels, predictions, labels=label_order))
 
+    # 3.Load (Saving the Processed Assets)
     with VECTORIZER_PATH.open("wb") as file:
         pickle.dump(vectorizer, file)
     with MODEL_PATH.open("wb") as file:

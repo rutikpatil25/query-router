@@ -6,7 +6,7 @@ Developed as a third-year engineering project for **Statistics for Machine Learn
 
 ---
 
-## 🚀 Architectural Pipeline Flow
+##  Architectural Pipeline Flow
 
 The core application operates as an asymmetrical cost-sensitive decision pipeline, maximizing availability and processing speed while minimizing live API compute overhead:
 
@@ -39,7 +39,7 @@ The core application operates as an asymmetrical cost-sensitive decision pipelin
 
 ---
 
-## 📁 Repository Layout
+## 📁 Repository Layout 
 
 ```text
 query-router-project/
