@@ -8,3 +8,10 @@ timestamp,query,route,method,confidence
 2026-09-21T15:00:20.167540+00:00,string,online,fallback,0.5051
 2026-09-21T16:29:04.765771+00:00,hello,online,fallback,0.5051
 2026-09-21T16:44:47.968613+00:00,who is president of India,online,fallback,0.5013
+2026-09-22T04:20:34.323915+00:00,what is time now,online,fallback,0.5155
+2026-09-22T04:36:16.905251+00:00,what is temperature today,online,fallback,0.5193
+2026-09-22T04:37:15.196117+00:00,what is github,local,ml,0.5643
+2026-09-22T05:03:56.005341+00:00,what is black hold,local,ml,0.5677
+2026-09-23T03:09:06.320029+00:00,What is temperature today,online,fallback,0.5193
+2026-09-23T03:18:01.053928+00:00,what is defination of blackhole,local,ml,0.5873
+2026-09-23T03:18:49.699578+00:00,what is latest defination of blackhole,online,keyword,1.0000
